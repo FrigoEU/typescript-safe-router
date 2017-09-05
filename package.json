@@ -1,6 +1,6 @@
 {
   "name": "typescript-safe-router",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A type-safe router for TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,6 +14,10 @@
   ],
   "author": "Simon Van Casteren",
   "license": "LGPL-3.0+",
+  "repository": { 
+    "type": "git",
+    "url": "https://github.com/FrigoEU/typescript-safe-router" 
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.74",
     "@types/mocha": "^2.2.42",

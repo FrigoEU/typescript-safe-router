@@ -144,7 +144,7 @@ export interface Router<T> {
  *      + newrouter vs registerRoute is a bit of a stupid API
  *   Can this be done better while keeping the T in Router<T> typesafe?
  */
-export function newRouter<T, S extends RouteParamsSpec>(matcher: Route<S>, handler: (params: SpecToType<S>) => T): Router<T> {
+export function makeRouter<T, S extends RouteParamsSpec>(matcher: Route<S>, handler: (params: SpecToType<S>) => T): Router<T> {
   return {
     match: function(hash: string){
       const matchedParams = matcher.matchUrl(hash);
