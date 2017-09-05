@@ -32,7 +32,22 @@ makeRouter(messages, ({startDate: Date}) => {
 });
 ```
 
-## A practical example with React
+## Type definition syntax
+
+The following strings can be used to define the types of your route parameters:
+
+```typescript
+"string"
+"string | null"
+"date"
+"date | null"
+"number"
+"number | null"
+"boolean"
+"boolean | null"
+```
+
+## A full example with React
 
 ```typescript
 import * as Messages from "./messages";
