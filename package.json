@@ -1,0 +1,27 @@
+{
+  "name": "typescript-safe-router",
+  "version": "0.0.1",
+  "description": "A type-safe router for TypeScript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --compilers ts:ts-node/register test/test.ts"
+  },
+  "keywords": [
+    "typescript",
+    "router"
+  ],
+  "author": "Simon Van Casteren",
+  "license": "LGPL-3.0+",
+  "devDependencies": {
+    "@types/lodash": "^4.14.74",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.26",
+    "jsverify": "^0.8.2",
+    "lodash": "^4.17.4",
+    "mocha": "^3.5.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  }
+}
