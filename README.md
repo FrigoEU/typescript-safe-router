@@ -24,11 +24,11 @@ export const messages = makeRoute("messages", {startDate: "date"});
 export const employees = makeRoute("employees", {employeeId: "number"});
 
 makeRouter(messages, ({startDate: Date}) => {
-    console.log("We've navigated to the messages page!")
-    return null;
-  }).registerRoute(employees, ({employeeId: number}) => {
-    console.log("We've navigated to the employees page!")
-    return null;
+  console.log("We've navigated to the messages page!")
+  return null;
+}).registerRoute(employees, ({employeeId: number}) => {
+  console.log("We've navigated to the employees page!")
+  return null;
 });
 
 ```
@@ -49,8 +49,22 @@ The following strings can be used to define the types of your route parameters:
 }
 ```
 
+## Type definition syntax
 
-## A practical example with React
+The following strings can be used to define the types of your route parameters:
+
+```typescript
+"string"
+"string | null"
+"date"
+"date | null"
+"number"
+"number | null"
+"boolean"
+"boolean | null"
+```
+
+## A full example with React
 
 ```typescript
 import * as Messages from "./messages";
@@ -62,7 +76,7 @@ export const messages = makeRoute("messages", {startDate: "date"});
 export const employees = makeRoute("employees", {employeeId: "number"});
 
 
-class App extends React.Component&#60{}, {}> {
+class App extends React.Component<{}, {}> {
   private router: Router<JSX.Element>;
 
   constructor(props: {}) {
