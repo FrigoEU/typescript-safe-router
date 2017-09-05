@@ -91,7 +91,6 @@ function makeRoute(routeName, routeParams) {
                 else {
                     return acc
                         + "/" + key.toLowerCase()
-                        // Encoding so we don't break on strings with '/', ...
                         + "/" + encodeURIComponent(serializeRouteParam(routeParams[key], val));
                 }
             }, "");
@@ -103,7 +102,7 @@ exports.makeRoute = makeRoute;
  *      + newrouter vs registerRoute is a bit of a stupid API
  *   Can this be done better while keeping the T in Router<T> typesafe?
  */
-function newRouter(matcher, handler) {
+function makeRouter(matcher, handler) {
     return {
         match: function (hash) {
             var matchedParams = matcher.matchUrl(hash);
@@ -114,7 +113,7 @@ function newRouter(matcher, handler) {
         }
     };
 }
-exports.newRouter = newRouter;
+exports.makeRouter = makeRouter;
 /* TODO Never return null from a handler!
  *   Is this an issue of using null in Route.matchUrl instead of Maybe<X>?
  */

@@ -35,4 +35,4 @@ export interface Router<T> {
     match: (hash: string) => T | null;
     registerRoute<S extends RouteParamsSpec>(matcher: Route<S>, handler: (params: SpecToType<S>) => T): Router<T>;
 }
-export declare function newRouter<T, S extends RouteParamsSpec>(matcher: Route<S>, handler: (params: SpecToType<S>) => T): Router<T>;
+export declare function makeRouter<T, S extends RouteParamsSpec>(matcher: Route<S>, handler: (params: SpecToType<S>) => T): Router<T>;

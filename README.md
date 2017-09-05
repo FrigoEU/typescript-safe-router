@@ -30,7 +30,25 @@ makeRouter(messages, ({startDate: Date}) => {
     console.log("We've navigated to the employees page!")
     return null;
 });
+
 ```
+
+## Type definition syntax
+
+The following strings can be used to define the types of your route parameters:
+
+```typescript
+"string"
+"string | null"
+"date"
+"date | null"
+"number"
+"number | null"
+"boolean"
+"boolean | null"
+}
+```
+
 
 ## A practical example with React
 
