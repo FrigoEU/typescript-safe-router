@@ -24,11 +24,11 @@ export const messages = makeRoute("messages", {startDate: "date"});
 export const employees = makeRoute("employees", {employeeId: "number"});
 
 makeRouter(messages, ({startDate: Date}) => {
-    console.log("We've navigated to the messages page!")
-    return null;
-  }).registerRoute(employees, ({employeeId: number}) => {
-    console.log("We've navigated to the employees page!")
-    return null;
+  console.log("We've navigated to the messages page!")
+  return null;
+}).registerRoute(employees, ({employeeId: number}) => {
+  console.log("We've navigated to the employees page!")
+  return null;
 });
 ```
 
@@ -44,7 +44,7 @@ export const messages = makeRoute("messages", {startDate: "date"});
 export const employees = makeRoute("employees", {employeeId: "number"});
 
 
-class App extends React.Component&#60{}, {}> {
+class App extends React.Component<{}, {}> {
   private router: Router<JSX.Element>;
 
   constructor(props: {}) {
