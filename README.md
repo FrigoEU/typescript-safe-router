@@ -8,7 +8,7 @@ Typescript-safe-router is tiny (1kb minified/gzipped), framework-independent and
 ## Usage
 
 ```typescript
-import {makeRouter, makeRouter} from "typescript-safe-router";
+import {makeRoute, makeRouter} from "typescript-safe-router";
 
 const employeeRoute = makeRoute("employee", {employeeId: "number"});
 
