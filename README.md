@@ -23,13 +23,15 @@ employeeRoute.matchUrl("#/employee/employeeid/test") // null
 export const messages = makeRoute("messages", {startDate: "date"});
 export const employees = makeRoute("employees", {employeeId: "number"});
 
-makeRouter(messages, ({startDate: Date}) => {
-  console.log("We've navigated to the messages page!")
-  return null;
-}).registerRoute(employees, ({employeeId: number}) => {
-  console.log("We've navigated to the employees page!")
-  return null;
-});
+makeRouter(
+  messages, ({startDate: Date}) => {
+    console.log("We've navigated to the messages page!")
+    return null;
+  }).registerRoute(
+  employees, ({employeeId: number}) => {
+    console.log("We've navigated to the employees page!")
+    return null;
+  });
 
 ```
 
