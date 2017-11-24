@@ -72,22 +72,20 @@ import * as Employees from "./employee";
 import * as React from "react";
 import {makeRoute, makeRouter, Router} from "./router";
 
+// Defining what routes we have, and what parameters the urls contain
 export const messages = makeRoute("messages", {startDate: "date"});
 export const employees = makeRoute("employees", {employeeId: "number"});
-
 
 class App extends React.Component<{}, {}> {
   private router: Router<JSX.Element>;
 
   constructor(props: {}) {
     super(props);
-    this.state = { session: null };
 
-    this.router = makeRouter(messages, ({startDate: Date}) => {
-      return <Message.Page startDate={startDate} />;
-      }).registerRoute(employees, ({employeeId: number}) => {
-        return <Employees.Page employeeId={employeeId} />;
-    });    
+    // Defining what we want functions we want router.match to execute for every route
+    this.router = makeRouter(
+      messages, ({startDate: Date}) => <Message.Page startDate={startDate} />).registerRoute(
+      employees, ({employeeId: number}) => <Employees.Page employeeId={employeeId} />);    
 
     window.onhashchange = () => this.forceUpdate();
   }
