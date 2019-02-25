@@ -186,7 +186,7 @@ function findInHash(_hash: string, _key: string): string | null {
   const startIndexOfString = hash.indexOf(key);
   if (startIndexOfString === -1) { return null; }
 
-  const rest = hash.substring(startIndexOfString + key.length + 1); // + 1 to account for slash after key
+  const rest = _hash.substring(startIndexOfString + key.length + 1); // + 1 to account for slash after key
 
   const strippedRest = rest.indexOf("/") > -1 ? rest.substr(0, rest.indexOf("/")) : rest;
   return strippedRest;
