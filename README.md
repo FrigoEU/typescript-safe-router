@@ -24,12 +24,12 @@ export const messages = makeRoute("messages", {startDate: "date"});
 export const employees = makeRoute("employees", {employeeId: "number"});
 
 makeRouter(
-  messages, ({startDate: Date}) => {
-    console.log("We've navigated to the messages page!")
+  messages, (opts) => {
+    console.log("We've navigated to the messages page! The startDate is in year: " + opts.startDate.getFullYear().toString())
     return null;
   }).registerRoute(
-  employees, ({employeeId: number}) => {
-    console.log("We've navigated to the employees page!")
+  employees, (opts) => {
+    console.log("We've navigated to the employees page! Employee number: " + opts.employeeId.toString())
     return null;
   });
 
